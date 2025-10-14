@@ -16,12 +16,26 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@page {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@page :first {
+  margin-top: 0;
+}
+
+ul, li {
+  all: revert;
+}
+
+.markdown {
+
+  & p {
+    all: revert;
+  }
+
+  & h1 {
+    @apply font-bold;
+  }
 }

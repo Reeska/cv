@@ -1,0 +1,7 @@
+- **Langages** : HTML, CSS, JavaScript, TypeScript
+- **Frameworks** : React, Vue.js, Nuxt, Node.js, Nest.js
+- **Content Management** : Headless CMS Prismic
+- **Design** : Material UI, Vuetify, Tailwind
+- **Tests** : Jest, Vitest, Testing Library, Playwright, BackstopJS
+- **CI** : Gitlab CI, Jenkins
+- **Autres** : Docker, AWS (S3, Cloudfront)
