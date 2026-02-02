@@ -16,7 +16,9 @@ interface CardWithCompany extends Card {
   companyPictureUrl: string | undefined;
 }
 
-const cleanHTML = (html: string) => html.replace(/(<br>)+/g, '\n').replace(/<\/?p>/g, '');
+const cleanHTML = (html: string) => html.replace(/\n+/g, '').replace(/\s+/g, ' ').replace(/(<br>)/g, '\n').replace(/<\/?p>/g, '');
+
+const removeEmojis = (text: string) => text.replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, '').trim();
 
 const mapBaseCard = async (experience: ElementHandle<SVGElement | HTMLElement>): Promise<Card> => {
   const title = (await (await experience.$('h3'))?.textContent())?.trim() ?? '';
@@ -100,7 +102,7 @@ interface Formation {
 const mapFormation = async (formation: ElementHandle<SVGElement | HTMLElement>): Promise<Formation> => {
   const school = (await (await formation.$('h3'))?.textContent() ?? '').trim();
   const degreeInfos = (await Promise.all((await formation.$$('.education__item--degree-info'))
-      .map((degree: ElementHandle<SVGElement | HTMLElement>) => degree.textContent()))).join(' · ');
+    .map((degree: ElementHandle<SVGElement | HTMLElement>) => degree.textContent()))).join(' · ');
   const dates = await (await formation.$('.date-range'))?.textContent() ?? '';
   const schoolPictureUrl = getOverridePicture(school) ?? await (await formation.$('img'))?.getAttribute('src') ?? undefined;
 
@@ -112,7 +114,7 @@ const mapFormation = async (formation: ElementHandle<SVGElement | HTMLElement>):
   };
 };
 
-test('extract resume and generate json, html and pdf', async ({page}) => {
+test('extract resume and generate json, html and pdf', async ({ page }) => {
   await page.goto('about:blank');
 
   const profileBuffer = fs.readFileSync('in/profile.html');
@@ -126,7 +128,7 @@ test('extract resume and generate json, html and pdf', async ({page}) => {
     await experienceTitle.scrollIntoViewIfNeeded();
   }
 
-  const name = (await (await page.$('.top-card-layout__title'))?.textContent())?.trim() ?? '';
+  const name = removeEmojis((await (await page.$('.top-card-layout__title'))?.textContent())?.trim() ?? '');
   const about = cleanHTML((await (await page.$('.core-section-container__content'))?.innerHTML())?.trim() ?? '');
   const headline = (await (await page.$('.top-card-layout__headline'))?.textContent())?.trim() ?? '';
   const subinfo = await (await page.$('.top-card-layout__first-subline'))?.textContent() ?? '';
@@ -145,11 +147,11 @@ test('extract resume and generate json, html and pdf', async ({page}) => {
 
   const now = new Date();
 
-  const firstProject = projects.at(-1)?.dates?.match(/(\d+)/g)?.[0];
+  const firstProject = projects.at(-1)?.dates?.match(/(\d+)/g)?.[ 0 ];
   const firstProjectYear = firstProject ? parseInt(firstProject, 10) : now.getFullYear();
 
   const lastProjectYears = projects.at(0)?.dates.match(/(\d+)/g);
-  const lastProjectYear = lastProjectYears ? parseInt(lastProjectYears[1] ?? lastProjectYears[0], 10) : now.getFullYear();
+  const lastProjectYear = lastProjectYears ? parseInt(lastProjectYears[ 1 ] ?? lastProjectYears[ 0 ], 10) : now.getFullYear();
 
   console.log('xp', firstProjectYear, lastProjectYear);
 

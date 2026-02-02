@@ -1,22 +1,35 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '../globals.css'
+import React from "react";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: `Thomas Champion - CV - ${new Date().toISOString().substring(0, 10)}`,
-  description: 'Curriculum vitae',
+export function generateMetadata(): Metadata {
+  return {
+    title: `Thomas Champion - CV - ${new Date().toISOString().substring(0, 10)} - ${Math.random().toString(36).substring(2, 6)}`,
+    description: 'Curriculum vitae',
+    icons: {
+      icon: '/favicon.png',
+    },
+  }
 }
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} `}>{children}</body>
+    <body className={`${inter.className} bg-gray-200 print:bg-white`}>
+    <div
+      className="w-[210mm] min-h-[297mm] print:min-h-0 mx-auto my-5 print:my-0 p-[1cm] pb-0 bg-white shadow-lg print:shadow-none relative">
+      <span className="absolute left-1 top-1 text-gray-300">&lt;cv&gt;</span>
+      <span className="absolute right-1 bottom-0 text-gray-300">&lt;/cv&gt;</span>
+      {children}
+    </div>
+    </body>
     </html>
   )
 }
