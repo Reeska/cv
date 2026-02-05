@@ -174,7 +174,8 @@ const Main = ({ data }: { data: Curriculum }) => {
                 <span className="block absolute -left-8 top-0">
                   <Image src={tardisImg} alt="TARDIS" width={32} height={0} />
                 </span>
-                <span className="">{project.dates}</span> -{' '}
+                <span className="">{project.dates}</span> ({project.duration})
+                {' - '}
                 <span className="">
                   {project.title}{' '}
                   <span className=" text-primary">- {project.company}</span>
