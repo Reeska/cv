@@ -13,7 +13,7 @@
     "postinstall": "npx playwright install"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.8.1",
+    "@tanstack/react-query": "^5.90.20",
     "next": "^16.1.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
