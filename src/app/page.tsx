@@ -42,100 +42,97 @@ const Title = ({
 
 const InfoCol = ({ data }: { data: Curriculum }) => {
   return (
-    <div className="float-left w-[24%] h-[277mm] mr-4">
-      <div className="flex flex-col gap-6">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={profileImg.src}
-          className="w-40 rounded-full h-40 mx-auto object-cover border-4 border-[#4460aa]"
-          alt=""
-        />
+    <div className="float-left w-[25%] h-[277mm] mr-[1cm] flex flex-col gap-7">
+      <img
+        src={profileImg.src}
+        className="w-40 rounded-full h-40 mx-auto object-cover border-4 border-[#4460aa]"
+        alt=""
+      />
 
-        <h1
-          className={twJoin(
-            'text-4xl uppercase font-bold text-center',
-            titleFont.className,
-          )}
-        >
-          {data.name}
-        </h1>
-        <div className="flex flex-col gap-1 text-xs">
-          <p>
-            <EmailIcon className="text-xl mr-2" />
-            <ObfuscatedText encoded={data.email} />
-          </p>
-          <p>
-            <PhoneIcon className="text-xl mr-2" />
-            <ObfuscatedText encoded={data.phone} />
-          </p>
-          <p>
-            <LinkedinIcon className="text-xl mr-2" />
-            <a href={`https://${data.url}`} target="_blank">
-              {data.url}
-            </a>
-          </p>
-        </div>
+      <h1
+        className={twJoin(
+          'text-4xl uppercase font-bold text-center',
+          titleFont.className,
+        )}
+      >
+        {data.name}
+      </h1>
+      <div className="flex flex-col gap-1 text-xs">
+        <p>
+          <EmailIcon className="text-xl mr-2" />
+          <ObfuscatedText encoded={data.email} />
+        </p>
+        <p>
+          <PhoneIcon className="text-xl mr-2" />
+          <ObfuscatedText encoded={data.phone} />
+        </p>
+        <p>
+          <LinkedinIcon className="text-xl mr-2" />
+          <a href={`https://${data.url}`} target="_blank">
+            {data.url}
+          </a>
+        </p>
+      </div>
 
-        <div className="text-xs">
-          <Markdown className="m-0">{data.about}</Markdown>
-        </div>
+      <div className="text-xs">
+        <Markdown className="m-0">{data.about}</Markdown>
+      </div>
 
-        <div className="text-xs">
-          <Title className="mb-5 uppercase">Compétences</Title>
-          <div>
-            <h3 className="uppercase font-bold mb-2">Techniques</h3>
-            <p className="mb-2">
-              {data.technicalSkills.map((skill, index) => (
-                <React.Fragment key={skill.name}>
-                  {index > 0 && ', '}
-                  <span
-                    className={twJoin([
-                      skill.color && `${skill.color} font-bold`,
-                    ])}
-                  >
-                    {skill.name}
-                  </span>
-                </React.Fragment>
-              ))}
-            </p>
-          </div>
-
-          <h3 className="uppercase mb-2 font-bold">Contributions</h3>
-          <div className="mb-2">- Recruteur technique chez Xebia</div>
-          <div>
-            - Talks à{' '}
-            <a
-              className="underline"
-              href="https://fr.slideshare.net/slideshow/xebicon17-entrevue-avec-vuejs-thomas-champion-et-ludovic-ladeu/83407085"
-            >
-              Devoxx 2018
-            </a>{' '}
-            &{' '}
-            <a
-              className="underline"
-              href="https://www.youtube.com/watch?v=MfN6bdxm5BU"
-            >
-              FrontSide 2020
-            </a>
-          </div>
-        </div>
-
-        <div className="text-xs">
-          <Title className="mb-5 uppercase">Formation</Title>
-
-          <div className="flex flex-col gap-2">
-            {data.education.map((edu) => (
-              <div key={edu.dates} className="flex gap-3 items-center">
-                <div>
-                  <span className="flex flex-col">
-                    <span className="font-bold">{edu.degreeInfos}</span>
-                    {edu.school}
-                  </span>
-                  <span>{edu.dates}</span>
-                </div>
-              </div>
+      <div className="text-xs">
+        <Title className="mb-5 uppercase">Compétences</Title>
+        <div>
+          <h3 className="uppercase font-bold mb-2">Techniques</h3>
+          <p className="mb-2">
+            {data.technicalSkills.map((skill, index) => (
+              <React.Fragment key={skill.name}>
+                {index > 0 && ', '}
+                <span
+                  className={twJoin([
+                    skill.color && `${skill.color} font-bold`,
+                  ])}
+                >
+                  {skill.name}
+                </span>
+              </React.Fragment>
             ))}
-          </div>
+          </p>
+        </div>
+
+        <h3 className="uppercase mb-2 font-bold">Contributions</h3>
+        <div className="mb-2">- Recruteur technique chez Xebia</div>
+        <div>
+          - Talks à{' '}
+          <a
+            className="underline"
+            href="https://fr.slideshare.net/slideshow/xebicon17-entrevue-avec-vuejs-thomas-champion-et-ludovic-ladeu/83407085"
+          >
+            Devoxx 2018
+          </a>{' '}
+          &{' '}
+          <a
+            className="underline"
+            href="https://www.youtube.com/watch?v=MfN6bdxm5BU"
+          >
+            FrontSide 2020
+          </a>
+        </div>
+      </div>
+
+      <div className="text-xs">
+        <Title className="mb-5 uppercase">Formation</Title>
+
+        <div className="flex flex-col gap-2">
+          {data.education.map((edu) => (
+            <div key={edu.dates} className="flex gap-3 items-center">
+              <div>
+                <span className="flex flex-col">
+                  <span className="font-bold">{edu.degreeInfos}</span>
+                  {edu.school}
+                </span>
+                <span>{edu.dates}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -163,7 +160,7 @@ const Main = ({ data }: { data: Curriculum }) => {
         Expériences professionnelles
       </Title>
 
-      <div className="text-[0.70rem] flex-grow flex flex-col gap-2 border-l pl-4 border-secondary">
+      <div className="text-[0.70rem] flex-grow flex flex-col gap-2 border-l pl-3 border-secondary">
         {data.projects.map((project, index) => (
           <div key={project.dates} className="relative">
             <div className="mb-2">
@@ -171,7 +168,7 @@ const Main = ({ data }: { data: Curriculum }) => {
                 {index === 0 ? (
                   <span className="h-2 w-3 block bg-white rounded-full absolute -left-5 -top-1"></span>
                 ) : null}
-                <span className="block absolute -left-8 top-0">
+                <span className="block absolute -left-7 top-0">
                   <Image src={tardisImg} alt="TARDIS" width={32} height={0} />
                 </span>
                 <span className="">{project.dates}</span> ({project.duration})
