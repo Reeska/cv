@@ -52,7 +52,7 @@ about: >-
 
 projects:
   - title: Développeur Front-end Vue
-    dates: 2024 - 2025
+    dates: jan. 2024 - oct. 2025
     duration: 1 an 10 mois
     stack: >- 
       **Nuxt 3**, TypeScript, Tailwind, Gitlab CI
@@ -64,7 +64,7 @@ projects:
     company: Orange Prestations TV
 
   - title: Développeur Lead Front-end React
-    dates: 2023 - 2023
+    dates: déc. 2022 - juin 2023
     duration: 7 mois
     stack: >-
       **React**, TypeScript, Tailwind &amp; MUI, Testing Library, Playwright, Gitlab CI, Docker
@@ -74,7 +74,7 @@ projects:
     company: WeScale
 
   - title: Lead Développeur Front-end Vue
-    dates: 2021 - 2022
+    dates: juil. 2021 - mai 2022
     duration: 11 mois
     stack: >- 
       **Nuxt 2**, TypeScript, Vuetify, Tailwind, Testing Library, S3
@@ -83,7 +83,7 @@ projects:
     company: Voilà
 
   - title: Développeur Front-end React chez Sanofi
-    dates: 2020 - 2021
+    dates: juin 2020 - juin 2021
     duration: 1 an 1 mois
     stack: >-
       **React**, TypeScript, MUI, Testing Library, S3, Python
@@ -95,7 +95,7 @@ projects:
     company: Xebia
 
   - title: Lead Développeur Fullstack JS chez LCL
-    dates: 2018 - 2020
+    dates: sept. 2018 - mai 2020
     duration: 1 an 9 mois
     stack: >-
       **Angular Universal**, Nest.js, CMS Prismic, Docker, Docker Swarm, Redis
@@ -106,7 +106,7 @@ projects:
     company: Xebia
 
   - title: Lead Développeur Front-end chez Artel
-    dates: 2016 - 2018
+    dates: sept. 2016 - août 2018
     duration: 2 ans
     stack: >-
       **Angular.js 1.5**, Sass, Docker, AWS ECS / Dynamo / SQS
@@ -118,7 +118,7 @@ projects:
     company: Xebia
 
   - title: Développeur Fullstack J2EE
-    dates: 2012 - 2016
+    dates: avril 2012 - août 2016
     duration: 4 ans et 3 mois
     stack: >-
       **Java 4, 5, 6**, Struts 1 & 2, HTML/CSS/jQuery, Spring, SOAP, Hibernate, Oracle, Jenkins
