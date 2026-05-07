@@ -52,6 +52,18 @@ about: >-
 
 projects:
   - title: Développeur Front-end Vue
+    dates: fev. 2026 - aujourd'hui
+    duration: 2 mois
+    stack: >-
+      **Vue 3**, TypeScript, Tailwind, Gitlab CI
+    description: |-
+      Projet Scrum composé d'une dizaine de développeurs organisés en 4 squads, j'ai :
+      - développé de nouvelles fonctionnalités sur le site e-commerce www.maisonsdumonde.com ;
+      - contribué à l'amélioration des performances et de l'accessibilité
+      - mise en place de tests e2e avec Playwright dans la pipeline CI.
+    company: Maisons du monde
+
+  - title: Développeur Front-end Vue
     dates: jan. 2024 - oct. 2025
     duration: 1 an 10 mois
     stack: >- 
