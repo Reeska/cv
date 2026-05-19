@@ -42,7 +42,7 @@ const Title = ({
 
 const InfoCol = ({ data }: { data: Curriculum }) => {
   return (
-    <div className="float-left w-[25%] h-[277mm] mr-[1cm] flex flex-col gap-7">
+    <div className="float-left w-[25%] h-full mr-[1cm] flex flex-col gap-7">
       <img
         src={profileImg.src}
         className="w-40 rounded-full h-40 mx-auto object-cover border-4 border-[#4460aa]"
@@ -146,7 +146,7 @@ const Main = ({ data }: { data: Curriculum }) => {
   )
 
   return (
-    <div className="h-[277mm] flex flex-col">
+    <div className="h-[277mm] flex flex-col ml-auto w-[69%]">
       <h2
         className={`text-2xl font-semibold text-center uppercase ${titleFont.className}`}
       >

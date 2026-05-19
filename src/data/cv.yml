@@ -46,6 +46,8 @@ technicalSkills:
     color: text-blue-700
   - name: AWS Cloudfront
     color: text-orange-700
+  - name: Claude Code
+    color: text-amber-600
 
 about: >-
   Expert front-end passionné par le Craft, j'accompagne les équipes dans la mise en place de pratiques d'excellence : architecture maintenable, tests automatisés et accessibilité.
@@ -55,7 +57,7 @@ projects:
     dates: fev. 2026 - aujourd'hui
     duration: 2 mois
     stack: >-
-      **Vue 3**, TypeScript, Tailwind, Gitlab CI
+      **Vue 3**, TypeScript, Tailwind, Gitlab CI, Claude Code
     description: |-
       Projet Scrum composé d'une dizaine de développeurs organisés en 4 squads, j'ai :
       - développé de nouvelles fonctionnalités sur le site e-commerce www.maisonsdumonde.com ;
@@ -67,7 +69,7 @@ projects:
     dates: jan. 2024 - oct. 2025
     duration: 1 an 10 mois
     stack: >- 
-      **Nuxt 3**, TypeScript, Tailwind, Gitlab CI
+      **Nuxt 3**, TypeScript, Tailwind, Gitlab CI, Claude Code
     description: |-
       Projet composé d'un développeur par application (Web, SmartTV, Android, Apple) j'ai :
       - développé les nouvelles fonctionnalités de la plateforme de streaming OCS (site web, Chromecast puis SmartTV) ;
@@ -83,7 +85,7 @@ projects:
     description: |-
       Au sein d'une équipe de 5 développeurs dont j'étais le seul profil front, j'ai conçu et déployé le portail Web d'un outil de configuration de VPN en utilisant les bonnes pratiques Craft.
       Accompagnement d'un développeur back-end pour monter en compétence sur la stack front.
-    company: WeScale
+    company: WeScale (pour TheGreenbow)
 
   - title: Lead Développeur Front-end Vue
     dates: juil. 2021 - mai 2022
